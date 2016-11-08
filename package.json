@@ -1,0 +1,25 @@
+{
+  "name": "3d_environment",
+  "version": "1.0.0",
+  "description": "3d envirment using dom elements and svg",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "gulp-sass": "^2.3.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hjrdave/3D_environment.git"
+  },
+  "author": "David A. Sanders",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hjrdave/3D_environment/issues"
+  },
+  "homepage": "https://github.com/hjrdave/3D_environment#readme"
+}
