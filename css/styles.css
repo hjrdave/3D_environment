@@ -1,0 +1,17 @@
+/*
+  Name: Styles.scss
+  Date: 11/07/2016
+  Notes: 
+*/
+.works {
+  display: block; }
+
+.stillworks {
+  display: block; }
+
+body {
+  margin: 0px;
+  padding: 30px; }
+
+.blue {
+  display: block; }
