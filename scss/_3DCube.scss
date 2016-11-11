@@ -1,0 +1,175 @@
+/***3Dcube***/
+
+//Mixins
+@mixin default(){
+    display: block;
+    position: absolute;
+    
+}
+@mixin cubeColor($color){
+    background-color: $color;
+    opacity: .4;
+}
+
+$height: 20px !important;
+
+.wrap {
+    display: block;
+    position: absolute;
+	perspective: 800px;
+	perspective-origin: 50% 100px;
+    margin-left: 35vw;
+    margin-top: 70vh;
+    transform-style: preserve-3d;
+    transform: scale(1.5) rotateX(-30deg);
+    
+}
+.null{
+    display: block;
+    position: absolute;
+    transform-style: preserve-3d;
+}
+.cube {
+    display: block;
+	position: relative;
+	width: 200px;
+	transform-style: preserve-3d;
+    
+}
+
+.cube div {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+    
+}
+.back {
+	transform: translateZ(-100px) rotateY(180deg);
+    @include cubeColor(blue);
+    height: $height;
+}
+
+.right {
+	transform: rotateY(-270deg) translateX(100px);
+	transform-origin: top right;
+    @include cubeColor(purple);
+    height: $height;
+}
+.left {
+	transform: rotateY(270deg) translateX(-100px);
+	transform-origin: center left;
+    @include cubeColor(purple);
+    height: $height;
+}
+.top {
+	transform: rotateX(-90deg) translateY(-100px);
+	transform-origin: top center;
+    @include cubeColor(red);
+}
+.bottom {
+    display: none;
+	transform: rotateX(90deg) translateX(200px); 
+	transform-origin: bottom center;
+    @include cubeColor(red);
+}
+.front {
+	transform: translateZ(100px);
+    @include cubeColor(blue);
+    height: $height;
+}
+
+//Cube 2
+$height2: 300px !important;
+.cube2 {
+	position: relative;
+	width: 200px;
+	transform-style: preserve-3d;
+    margin-top: -300px;
+    
+}
+
+.cube2 div {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+    
+}
+.back2 {
+	transform: translateZ(-10px) translateX(70px) rotateY(180deg);
+    @include cubeColor(blue);
+    height: $height2;
+}
+
+ .right2 {
+	transform: rotateY(-270deg) translateX(10px) translateZ(70px);
+	transform-origin: top right;
+    @include cubeColor(purple);
+    height: $height2;
+}
+ .left2 {
+	transform: rotateY(270deg) translateX(-10px) translateZ(-70px);
+	transform-origin: center left;
+    @include cubeColor(purple);
+    height: $height2;
+}
+ .top2 {
+	transform: rotateX(-90deg) translateY(-40px) translateX(70px);
+	transform-origin: top center;
+    @include cubeColor(red);
+}
+ .bottom2 {
+    display: none;
+	transform: rotateX(90deg) translateX(200px); 
+	transform-origin: center center;
+    @include cubeColor(red);
+}
+ .front2 {
+	transform: translateZ(40px) translateX(70px);
+    @include cubeColor(blue);
+    height: $height2;
+}
+
+@keyframes flyAway {
+	//from { transform: rotateY(0); }
+	//to { transform: rotateY(360deg); }
+    from { transform: scale(.5)rotateY(-30deg) rotateX(20deg); }
+	to { transform: scale(5)rotateY(400deg) rotateX(20deg); }
+}
+
+.null {
+	animation: flyAway 40s infinite linear;
+}
+
+
+
+/*.cubeContainer{
+    @include default();
+    height: 500px;
+    width: 500px;
+    border: 2px solid black;
+    margin-left: 20vw;
+    perspective: 1000px;
+    
+}
+.null{
+    display: block;
+    position: absolute;
+    margin-left: 20%;
+    margin-top: 20%;
+    //transform: rotateX(20deg) rotateY(80deg);
+}
+.side1{
+    display: block;
+    position: absolute;
+    backface-visibility: visible;
+    background-color: blue;
+    opacity: .5;
+    height: 300px;
+    width: 300px;
+}
+.side2{
+    @extend .side1;
+    background-color: red;
+    transform:translateY(130px) rotateX(90deg);
+}
+.side2*/
